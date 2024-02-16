@@ -1,0 +1,607 @@
+CREATE DATABASE Telecommunication
+USE Telecommunication;	
+
+
+CREATE TABLE Support_Agents(
+ID INT PRIMARY KEY AUTO_INCREMENT,
+FirstName VARCHAR(55),
+LastName VARCHAR(55),
+Gender VARCHAR(10)
+);
+
+INSERT INTO Support_Agents(FirstName,LastName,Gender)
+VALUES('Alexander', 'Muller', 'Male'),
+('Sofia', 'Rossi', 'Female'),
+('Luca', 'Andersen', 'Male'),
+('Isabella', 'Petrov', 'Female'),
+('Matthias', 'Wagner', 'Male'),
+('Elena', 'Costa', 'Female'),
+('Ivan', 'Kovač', 'Male'),
+('Emilia', 'Schmidt', 'Female'),
+('Victor', 'Dubois', 'Male'),
+('Valentina', 'Mancini', 'Female'),
+('Adrian', 'Popescu', 'Male'),
+('Natalia', 'Ivanova', 'Female'),
+('Oscar', 'García', 'Male'),
+('Clara', 'Fernandez', 'Female'),
+('Hugo', 'Silva', 'Male'),
+('Aurora', 'Rossi', 'Female'),
+('Leon', 'Müller', 'Male'),
+('Amelia', 'Andersson', 'Female'),
+('Felix', 'Schmitt', 'Male'),
+('Livia', 'Antoniou', 'Female');
+
+CREATE TABLE Ratings(
+ID INT PRIMARY KEY AUTO_INCREMENT,
+AgentID INT,
+Support INT,
+Communication INT,
+Empathy INT,
+Problem_Solved VARCHAR(10),
+	 FOREIGN KEY (AgentID)
+        REFERENCES Support_Agents (ID)
+);
+
+INSERT INTO Ratings(AgentID,Support,Communication,Empathy,Problem_Solved)
+VALUES(
+1, 8, 9, 8, 1),
+(1, 7, 8, 9, 0),
+(1, 10, 7, 8, 1),
+(1, 8, 8, 6, 0),
+(1, 10, 10, 10, 1),
+(1, 9, 9, 7, 1),
+(1, 8, 8, 8, 0),
+(1, 7, 9, 7, 1),
+(1, 10, 9, 9, 1),
+(1, 9, 8, 10, 1),
+(1, 7, 7, 9, 0),
+(1, 8, 10, 8, 1),
+(1, 9, 7, 9, 1),
+(1, 10, 8, 7, 0),
+(1, 7, 9, 10, 1),
+(1, 8, 8, 9, 0),
+(1, 9, 10, 7, 1),
+(1, 10, 9, 8, 1),
+(1, 8, 7, 9, 0),
+(1, 9, 8, 10, 1),
+(1, 10, 7, 8, 1),
+(1, 7, 10, 9, 0),
+(1, 8, 8, 7, 1),
+(1, 9, 7, 8, 1),
+(1, 10, 9, 9, 0),
+(1, 7, 8, 7, 1),
+(1, 9, 10, 8, 0),
+(2, 7, 8, 9, 1),
+(2, 8, 7, 8, 0),
+(2, 10, 8, 10, 1),
+(2, 7, 10, 7, 1),
+(2, 8, 8, 8, 0),
+(2, 9, 9, 7, 1),
+(2, 8, 8, 8, 1),
+(2, 7, 9, 7, 0),
+(2, 10, 9, 9, 1),
+(2, 9, 8, 10, 1),
+(2, 7, 7, 9, 1),
+(2, 8, 10, 8, 0),
+(2, 9, 7, 9, 1),
+(2, 10, 8, 7, 0),
+(2, 7, 9, 10, 1),
+(2, 8, 8, 9, 0),
+(2, 9, 10, 7, 1),
+(2, 10, 9, 8, 1),
+(2, 8, 7, 9, 0),
+(2, 9, 8, 10, 1),
+(2, 10, 7, 8, 0),
+(2, 7, 10, 9, 1),
+(2, 8, 8, 7, 0),
+(2, 9, 7, 8, 1),
+(3, 10, 7, 8, 1),
+(3, 8, 8, 7, 0),
+(3, 7, 10, 10, 1),
+(3, 8, 7, 8, 1),
+(3, 10, 8, 7, 0),
+(3, 9, 9, 7, 1),
+(3, 8, 8, 8, 1),
+(3, 7, 9, 7, 0),
+(3, 10, 9, 9, 1),
+(3, 9, 8, 10, 1),
+(3, 7, 7, 9, 1),
+(3, 8, 10, 8, 0),
+(3, 9, 7, 9, 1),
+(3, 10, 8, 7, 0),
+(3, 7, 9, 10, 1),
+(3, 8, 8, 9, 0),
+(3, 9, 10, 7, 1),
+(3, 10, 9, 8, 1),
+(3, 8, 7, 9, 0),
+(3, 9, 8, 10, 1),
+(3, 10, 7, 8, 1),
+(3, 7, 10, 9, 0),
+(3, 8, 8, 7, 1),
+(3, 9, 7, 8, 1),
+(3, 10, 9, 9, 0),
+(3, 7, 8, 7, 1),
+(3, 9, 10, 8, 0),
+(3, 8, 7, 8, 1),
+(3, 10, 9, 9, 0),
+(3, 9, 8, 10, 1),
+(4, 9, 8, 7, 1),
+(4, 7, 9, 8, 0),
+(4, 8, 10, 7, 1),
+(4, 10, 7, 8, 1),
+(4, 8, 9, 9, 0),
+(4, 9, 7, 8, 1),
+(4, 7, 8, 7, 1),
+(4, 8, 7, 9, 0),
+(4, 10, 8, 8, 1),
+(4, 9, 9, 10, 1),
+(4, 7, 7, 9, 1),
+(4, 8, 8, 7, 0),
+(4, 9, 10, 8, 1),
+(4, 10, 7, 9, 0),
+(4, 7, 9, 10, 1),
+(4, 8, 8, 9, 0),
+(4, 9, 10, 7, 1),
+(5, 8, 7, 9, 1),
+(5, 7, 8, 8, 0),
+(5, 10, 7, 8, 1),
+(5, 8, 8, 7, 0),
+(5, 10, 10, 9, 1),
+(5, 9, 9, 7, 1),
+(5, 8, 8, 8, 1),
+(5, 7, 9, 7, 0),
+(5, 10, 9, 9, 1),
+(5, 9, 8, 10, 1),
+(5, 7, 7, 9, 1),
+(5, 8, 10, 8, 0),
+(5, 9, 7, 9, 1),
+(5, 10, 8, 7, 0),
+(5, 7, 9, 10, 1),
+(5, 8, 8, 9, 0),
+(5, 9, 10, 7, 1),
+(5, 10, 9, 8, 1),
+(5, 8, 7, 9, 0),
+(5, 9, 8, 10, 1),
+(5, 10, 7, 8, 1),
+(5, 7, 10, 9, 0),
+(5, 8, 8, 7, 1),
+(5, 9, 7, 8, 1),
+(5, 10, 9, 9, 0),
+(6, 9, 8, 7, 1),
+(6, 7, 9, 8, 0),
+(6, 8, 10, 7, 1),
+(6, 10, 7, 8, 1),
+(6, 8, 9, 9, 0),
+(6, 9, 7, 8, 1),
+(6, 7, 8, 7, 1),
+(6, 8, 7, 9, 0),
+(6, 10, 8, 8, 1),
+(6, 9, 9, 10, 1),
+(6, 7, 7, 9, 1),
+(6, 8, 8, 7, 0),
+(7, 8, 7, 9, 1),
+(7, 7, 8, 8, 0),
+(7, 10, 7, 8, 1),
+(7, 8, 8, 7, 0),
+(7, 10, 10, 9, 1),
+(7, 9, 9, 7, 1),
+(7, 8, 8, 8, 1),
+(7, 7, 9, 7, 0),
+(7, 10, 9, 9, 1),
+(7, 9, 8, 10, 1),
+(7, 7, 7, 9, 1),
+(7, 8, 10, 8, 0),
+(7, 9, 7, 9, 1),
+(7, 10, 8, 7, 0),
+(7, 7, 9, 10, 1),
+(7, 8, 8, 9, 0),
+(7, 9, 10, 7, 1),
+(7, 10, 9, 8, 1),
+(7, 8, 7, 9, 0),
+(8, 8, 7, 9, 1),
+(8, 7, 8, 8, 0),
+(8, 10, 7, 8, 1),
+(8, 8, 8, 7, 0),
+(8, 10, 10, 9, 1),
+(8, 9, 9, 7, 1),
+(8, 8, 8, 8, 1),
+(8, 7, 9, 7, 0),
+(8, 10, 9, 9, 1),
+(8, 9, 8, 10, 1),
+(8, 7, 7, 9, 1),
+(8, 8, 10, 8, 0),
+(8, 9, 7, 9, 1),
+(8, 10, 8, 7, 0),
+(8, 7, 9, 10, 1),
+(8, 8, 8, 9, 0),
+(8, 9, 10, 7, 1),
+(9, 8, 7, 9, 1),
+(9, 7, 8, 8, 0),
+(9, 10, 7, 8, 1),
+(9, 8, 8, 7, 0),
+(9, 10, 10, 9, 1),
+(9, 9, 9, 7, 1),
+(9, 8, 8, 8, 1),
+(9, 7, 9, 7, 0),
+(9, 10, 9, 9, 1),
+(9, 9, 8, 10, 1),
+(9, 7, 7, 9, 1),
+(9, 8, 10, 8, 0),
+(9, 9, 7, 9, 1),
+(9, 10, 8, 7, 0),
+(9, 7, 9, 10, 1),
+(9, 8, 8, 9, 0),
+(9, 9, 10, 7, 1),
+(9, 10, 9, 8, 1),
+(9, 8, 7, 9, 0),
+(9, 9, 8, 10, 1),
+(10, 8, 7, 9, 1),
+(10, 7, 8, 8, 0),
+(10, 10, 7, 8, 1),
+(10, 8, 8, 7, 0),
+(10, 10, 10, 9, 1),
+(10, 9, 9, 7, 1),
+(10, 8, 8, 8, 1),
+(10, 7, 9, 7, 0),
+(10, 10, 9, 9, 1),
+(10, 9, 8, 10, 1),
+(10, 7, 7, 9, 1),
+(10, 8, 10, 8, 0),
+(10, 9, 7, 9, 1),
+(10, 10, 8, 7, 0),
+(10, 7, 9, 10, 1),
+(10, 8, 8, 9, 0),
+(10, 9, 10, 7, 1),
+(10, 10, 9, 8, 1),
+(10, 8, 7, 9, 0),
+(10, 9, 8, 10, 1),
+(10, 10, 7, 8, 1),
+(10, 7, 10, 9, 0),
+(10, 8, 8, 7, 1),
+(11, 8, 7, 9, 1),
+(11, 7, 8, 8, 0),
+(11, 10, 7, 8, 1),
+(11, 8, 8, 7, 0),
+(11, 10, 10, 9, 1),
+(11, 9, 9, 7, 1),
+(11, 8, 8, 8, 1),
+(11, 7, 9, 7, 0),
+(11, 10, 9, 9, 1),
+(11, 9, 8, 10, 1),
+(11, 7, 7, 9, 1),
+(11, 8, 10, 8, 0),
+(12, 8, 7, 9, 1),
+(12, 7, 8, 8, 0),
+(12, 10, 7, 8, 1),
+(12, 8, 8, 7, 0),
+(12, 10, 10, 9, 1),
+(12, 9, 9, 7, 1),
+(12, 8, 8, 8, 1),
+(12, 7, 9, 7, 0),
+(12, 10, 9, 9, 1),
+(12, 9, 8, 10, 1),
+(12, 7, 7, 9, 1),
+(12, 8, 10, 8, 0),
+(12, 9, 7, 9, 1),
+(12, 10, 8, 7, 0),
+(12, 7, 9, 10, 1),
+(12, 8, 8, 9, 0),
+(12, 9, 10, 7, 1),
+(12, 10, 9, 8, 1),
+(12, 8, 7, 9, 0),
+(13, 8, 7, 9, 1),
+(13, 7, 8, 8, 0),
+(13, 10, 7, 8, 1),
+(13, 8, 8, 7, 0),
+(13, 10, 10, 9, 1),
+(13, 9, 9, 7, 1),
+(13, 8, 8, 8, 1),
+(13, 7, 9, 7, 0),
+(13, 10, 9, 9, 1),
+(13, 9, 8, 10, 1),
+(13, 7, 7, 9, 1),
+(13, 8, 10, 8, 0),
+(13, 9, 7, 9, 1),
+(13, 10, 8, 7, 0),
+(14, 8, 7, 9, 1),
+(14, 7, 8, 8, 0),
+(14, 10, 7, 8, 1),
+(14, 8, 8, 7, 0),
+(14, 10, 10, 9, 1),
+(14, 9, 9, 7, 1),
+(14, 8, 8, 8, 1),
+(14, 7, 9, 7, 0),
+(14, 10, 9, 9, 1),
+(14, 9, 8, 10, 1),
+(14, 7, 7, 9, 1),
+(14, 8, 10, 8, 0),
+(14, 9, 7, 9, 1),
+(14, 10, 8, 7, 0),
+(14, 7, 9, 10, 1),
+(14, 8, 8, 9, 0),
+(14, 9, 10, 7, 1),
+(14, 10, 9, 8, 1),
+(14, 8, 7, 9, 0),
+(14, 9, 8, 10, 1),
+(14, 10, 7, 8, 1),
+(14, 7, 10, 9, 0),
+(14, 8, 8, 7, 1),
+(15, 8, 7, 9, 1),
+(15, 7, 8, 8, 0),
+(15, 10, 7, 8, 1),
+(15, 8, 8, 7, 0),
+(15, 10, 10, 9, 1),
+(15, 9, 9, 7, 1),
+(15, 8, 8, 8, 1),
+(15, 7, 9, 7, 0),
+(15, 10, 9, 9, 1),
+(15, 9, 8, 10, 1),
+(15, 7, 7, 9, 1),
+(15, 8, 10, 8, 0),
+(15, 9, 7, 9, 1),
+(15, 10, 8, 7, 0),
+(15, 7, 9, 10, 1),
+(15, 8, 8, 9, 0),
+(15, 9, 10, 7, 1),
+(15, 10, 9, 8, 1),
+(15, 8, 7, 9, 0),
+(15, 9, 8, 10, 1),
+(15, 10, 7, 8, 1),
+(15, 7, 10, 9, 0),
+(15, 8, 8, 7, 1),
+(15, 9, 7, 8, 1),
+(16, 8, 7, 9, 1),
+(16, 7, 8, 8, 0),
+(16, 10, 7, 8, 1),
+(16, 8, 8, 7, 0),
+(16, 10, 10, 9, 1),
+(16, 9, 9, 7, 1),
+(16, 8, 8, 8, 1),
+(16, 7, 9, 7, 0),
+(16, 10, 9, 9, 1),
+(16, 9, 8, 10, 1),
+(16, 7, 7, 9, 1),
+(16, 8, 10, 8, 0),
+(16, 9, 7, 9, 1),
+(16, 10, 8, 7, 0),
+(16, 7, 9, 10, 1),
+(16, 8, 8, 9, 0),
+(17, 8, 7, 9, 1),
+(17, 7, 8, 8, 0),
+(17, 10, 7, 8, 1),
+(17, 8, 8, 7, 0),
+(17, 10, 10, 9, 1),
+(17, 9, 9, 7, 1),
+(17, 8, 8, 8, 1),
+(17, 7, 9, 7, 0),
+(17, 10, 9, 9, 1),
+(17, 9, 8, 10, 1),
+(17, 7, 7, 9, 1),
+(17, 8, 10, 8, 0),
+(18, 8, 7, 9, 1),
+(18, 7, 8, 8, 0),
+(18, 10, 7, 8, 1),
+(18, 8, 8, 7, 0),
+(18, 10, 10, 9, 1),
+(18, 9, 9, 7, 1),
+(18, 8, 8, 8, 1),
+(18, 7, 9, 7, 0),
+(18, 10, 9, 9, 1),
+(18, 9, 8, 10, 1),
+(18, 7, 7, 9, 1),
+(18, 8, 10, 8, 0),
+(18, 9, 7, 9, 1),
+(18, 10, 8, 7, 0),
+(18, 7, 9, 10, 1),
+(18, 8, 8, 9, 0),
+(18, 9, 10, 7, 1),
+(18, 10, 9, 8, 1),
+(18, 8, 7, 9, 0),
+(18, 9, 8, 10, 1),
+(18, 10, 7, 8, 1),
+(18, 7, 10, 9, 0),
+(18, 8, 8, 7, 1),
+(18, 9, 7, 8, 1),
+(18, 10, 9, 9, 0),
+(18, 7, 8, 7, 1),
+(18, 9, 10, 8, 0),
+(18, 8, 7, 8, 1),
+(18, 10, 9, 9, 0),
+(18, 9, 8, 10, 1),
+(18, 7, 7, 9, 1),
+(19, 8, 7, 9, 1),
+(19, 7, 8, 8, 0),
+(19, 10, 7, 8, 1),
+(19, 8, 8, 7, 0),
+(19, 10, 10, 9, 1),
+(19, 9, 9, 7, 1),
+(19, 8, 8, 8, 1),
+(19, 7, 9, 7, 0),
+(19, 10, 9, 9, 1),
+(19, 9, 8, 10, 1),
+(19, 7, 7, 9, 1),
+(19, 8, 10, 8, 0),
+(19, 9, 7, 9, 1),
+(19, 10, 8, 7, 0),
+(19, 7, 9, 10, 1),
+(19, 8, 8, 9, 0),
+(19, 9, 10, 7, 1),
+(19, 10, 9, 8, 1),
+(19, 8, 7, 9, 0),
+(19, 9, 8, 10, 1),
+(19, 10, 7, 8, 1),
+(19, 7, 10, 9, 0),
+(19, 8, 8, 7, 1),
+(19, 9, 7, 8, 1),
+(19, 10, 9, 9, 0),
+(19, 7, 8, 7, 1),
+(19, 9, 10, 8, 0),
+(19, 8, 7, 8, 1),
+(19, 10, 9, 9, 0),
+(19, 9, 8, 10, 1),
+(19, 7, 7, 9, 1),
+(20, 8, 7, 9, 1),
+(20, 7, 8, 8, 0),
+(20, 10, 7, 8, 1),
+(20, 8, 8, 7, 0),
+(20, 10, 10, 9, 1),
+(20, 9, 9, 7, 1),
+(20, 8, 8, 8, 1),
+(20, 7, 9, 7, 0),
+(20, 10, 9, 9, 1);
+
+
+SELECT * FROM Support_Agents;
+SELECT * FROM Ratings;
+
+-- queries--
+
+-- Gender Ratings -- 
+SELECT 
+	Gender,
+	ROUND(AVG(Support),2) AS Average_Support,
+	ROUND(AVG(Communication),2) AS Average_Communication,
+	ROUND(AVG(Empathy),2) AS Average_Empathy 
+		FROM 
+			Support_Agents
+				JOIN 
+					Ratings ON Support_Agents.ID=Ratings.AgentID
+		GROUP BY Gender;
+
+-- Solved Cases--
+SELECT 
+    Support_Agents.ID,
+    CONCAT(FirstName, ' ', LastName) AS FullName,
+    COUNT(Problem_Solved) AS Solved_Cases,
+    (SELECT COUNT(Problem_Solved) FROM Ratings WHERE Ratings.AgentID = Support_Agents.ID) AS Total_Cases,
+    ROUND((COUNT(Problem_Solved) / (SELECT COUNT(Problem_Solved) FROM Ratings WHERE Ratings.AgentID = Support_Agents.ID) * 100), 2) AS Solved_Percentage
+FROM 
+	Support_Agents
+LEFT JOIN 
+    Ratings ON Support_Agents.ID = Ratings.AgentID
+WHERE 
+    Problem_Solved = 1
+GROUP BY 
+    Support_Agents.ID, FullName
+ORDER BY 
+    Solved_Percentage DESC,Solved_Cases DESC;
+    
+-- Ranking Support--
+SELECT 
+    Support_Agents.ID,
+    CONCAT(FirstName, ' ', LastName) AS FullName,
+    ROUND(AVG(Support),2) AS Average_Support,
+	ROUND(AVG(Communication),2) AS Average_Communication,
+	ROUND(AVG(Empathy),2) AS Average_Empathy 
+		FROM 
+			Support_Agents
+				JOIN 
+					Ratings ON Support_Agents.ID=Ratings.AgentID
+                    GROUP BY Support_Agents.ID;
+                    
+-- Total Rank--
+SELECT 
+    Support_Agents.ID,
+    CONCAT(FirstName, ' ', LastName) AS FullName,
+    ROUND((AVG(Support) + AVG(Communication) + AVG(Empathy)),2) AS TotalRating
+FROM 
+    Support_Agents
+JOIN 
+    Ratings ON Support_Agents.ID = Ratings.AgentID
+GROUP BY 
+    Support_Agents.ID, FullName
+ORDER BY 
+    TotalRating DESC;
+
+
+-- Payroll Update --
+
+
+CREATE TABLE Payroll (
+    Payroll_ID INT AUTO_INCREMENT PRIMARY KEY,
+    Agent_ID INT,
+    Payroll INT,
+    FOREIGN KEY (Agent_ID) REFERENCES Support_Agents(ID)
+);
+
+INSERT INTO Payroll(Agent_ID,Payroll)
+VALUES(
+1,1200),
+(2,1200),
+(3,1200),
+(4,1100),
+(5,1100),
+(6,1100),
+(7,1150),
+(8,1100),
+(9,1050),
+(10,1000),
+(11,1200),
+(12,950),
+(13,1150),
+(14,1100),
+(15,1000),
+(16,1150),
+(17,1000),
+(18,1200),
+(19,900),
+(20,1050);
+			
+
+SELECT 
+    Support_Agents.ID,
+    CONCAT(FirstName, ' ', LastName) AS FullName,
+    Gender,
+    Payroll,
+    CASE
+        WHEN (SUM(CASE WHEN Support = 7 THEN 1 ELSE 0 END) > 5)
+            AND (SUM(CASE WHEN Communication = 7 THEN 1 ELSE 0 END) > 5)
+            AND (SUM(CASE WHEN Empathy = 7 THEN 1 ELSE 0 END) > 5)
+        THEN 50
+        WHEN (SUM(CASE WHEN Support = 7 THEN 1 ELSE 0 END) > 3)
+            AND (SUM(CASE WHEN Communication = 7 THEN 1 ELSE 0 END) > 3)
+            AND (SUM(CASE WHEN Empathy = 7 THEN 1 ELSE 0 END) > 3)
+        THEN 100
+        WHEN (SUM(CASE WHEN Support = 8 THEN 1 ELSE 0 END) > 3)
+            AND (SUM(CASE WHEN Communication = 8 THEN 1 ELSE 0 END) > 3)
+            AND (SUM(CASE WHEN Empathy = 8 THEN 1 ELSE 0 END) > 3)
+        THEN 120
+        WHEN (SUM(CASE WHEN Support = 9 THEN 1 ELSE 0 END) + SUM(CASE WHEN Support = 10 THEN 1 ELSE 0 END) > 3)
+            AND (SUM(CASE WHEN Communication = 9 THEN 1 ELSE 0 END) + SUM(CASE WHEN Support = 10 THEN 1 ELSE 0 END) > 3)
+            AND (SUM(CASE WHEN Empathy = 9 THEN 1 ELSE 0 END) + SUM(CASE WHEN Support = 10 THEN 1 ELSE 0 END) > 3)
+        THEN 150
+        ELSE 0
+    END AS RatingBonus,
+    SUM(CASE WHEN Problem_Solved = 1 THEN 1 ELSE 0 END) AS Solved_Problem_Count,
+    SUM((CASE WHEN Problem_Solved = 1 THEN 1 ELSE 0 END) * 25) AS Solved_Problem_Bonus,
+    (Payroll + 
+     CASE
+        WHEN (SUM(CASE WHEN Support = 7 THEN 1 ELSE 0 END) > 5)
+            AND (SUM(CASE WHEN Communication = 7 THEN 1 ELSE 0 END) > 5)
+            AND (SUM(CASE WHEN Empathy = 7 THEN 1 ELSE 0 END) > 5)
+        THEN 50
+        WHEN (SUM(CASE WHEN Support = 7 THEN 1 ELSE 0 END) > 3)
+            AND (SUM(CASE WHEN Communication = 7 THEN 1 ELSE 0 END) > 3)
+            AND (SUM(CASE WHEN Empathy = 7 THEN 1 ELSE 0 END) > 3)
+        THEN 100
+        WHEN (SUM(CASE WHEN Support = 8 THEN 1 ELSE 0 END) > 3)
+            AND (SUM(CASE WHEN Communication = 8 THEN 1 ELSE 0 END) > 3)
+            AND (SUM(CASE WHEN Empathy = 8 THEN 1 ELSE 0 END) > 3)
+        THEN 120
+        WHEN (SUM(CASE WHEN Support = 9 THEN 1 ELSE 0 END) + SUM(CASE WHEN Support = 10 THEN 1 ELSE 0 END) > 3)
+            AND (SUM(CASE WHEN Communication = 9 THEN 1 ELSE 0 END) + SUM(CASE WHEN Support = 10 THEN 1 ELSE 0 END) > 3)
+            AND (SUM(CASE WHEN Empathy = 9 THEN 1 ELSE 0 END) + SUM(CASE WHEN Support = 10 THEN 1 ELSE 0 END) > 3)
+        THEN 150
+        ELSE 0
+    END +
+    SUM((CASE WHEN Problem_Solved = 1 THEN 1 ELSE 0 END) * 25)) AS TotalPayroll
+FROM 
+    Support_Agents
+JOIN 
+    Payroll ON Support_Agents.ID = Payroll.Agent_ID
+JOIN 
+    Ratings ON Support_Agents.ID = Ratings.AgentID
+GROUP BY 
+    Support_Agents.ID, FullName, Gender, Payroll
+ORDER BY TotalPayroll DESC;
+
